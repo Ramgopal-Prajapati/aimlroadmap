@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Master AI / ML Engineer with Ram Sir — Job Ready Curriculum & Roadmap</title>
+<meta name="description" content="Complete AI & ML Engineer curriculum by Ram Sir — Python, ML, DL, NLP, LLMs, Generative AI, SQL, Power BI, Projects & interview prep."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<style>
+  :root{
+    --bg:#07091a; --bg-2:#0d1130;
+    --card:rgba(255,255,255,0.04);
+    --card-border:rgba(255,255,255,0.09);
+    --text:#e7ecff; --muted:#9aa3c7;
+    --primary:#7c5cff; --primary-2:#22d3ee; --accent:#ff6ad5;
+    --grad: linear-gradient(135deg,#7c5cff 0%,#22d3ee 50%,#ff6ad5 100%);
+    --grad-soft: linear-gradient(135deg, rgba(124,92,255,.18), rgba(34,211,238,.12));
+    --radius:18px;
+    --shadow: 0 20px 60px -20px rgba(124,92,255,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6; overflow-x:hidden;
+    background-image:
+      radial-gradient(800px 500px at 10% -10%, rgba(124,92,255,.25), transparent 60%),
+      radial-gradient(700px 500px at 100% 10%, rgba(34,211,238,.18), transparent 60%),
+      radial-gradient(600px 400px at 50% 100%, rgba(255,106,213,.12), transparent 60%);
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:1200px;margin:0 auto;padding:0 22px}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,9,26,.7);border-bottom:1px solid var(--card-border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;max-width:1200px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem}
+  .logo-mark{width:38px;height:38px;border-radius:11px;background:var(--grad);display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:var(--shadow)}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{color:var(--muted);font-weight:500;font-size:.93rem;transition:.2s}
+  .nav-links a:hover{color:var(--text)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;border:none;cursor:pointer;font-weight:600;font-size:.93rem;transition:transform .2s, box-shadow .2s;font-family:inherit}
+  .btn-primary{background:var(--grad);color:#fff;box-shadow:var(--shadow)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--card-border)}
+  .btn-ghost:hover{background:var(--card)}
+  .menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer}
+
+  /* HERO */
+  .hero{padding:80px 0 60px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--grad-soft);border:1px solid var(--card-border);color:#cdd5ff;font-size:.85rem;font-weight:500;margin-bottom:22px}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:#22d3ee;box-shadow:0 0 12px #22d3ee}
+  h1{font-size:clamp(2.1rem,5vw,3.5rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
+  h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{color:var(--muted);font-size:1.05rem;max-width:560px;margin-bottom:30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+  .hero-stats{display:flex;gap:30px;flex-wrap:wrap}
+  .stat .num{font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;color:transparent}
+  .stat .lbl{color:var(--muted);font-size:.82rem}
+
+  .hero-visual{position:relative;aspect-ratio:1/1;max-width:480px;margin:0 auto;width:100%}
+  .orb{position:absolute;inset:0;border-radius:50%;background:var(--grad);filter:blur(70px);opacity:.5;animation:float 6s ease-in-out infinite}
+  .hero-card{position:absolute;inset:8%;border-radius:26px;background:rgba(13,17,48,.7);backdrop-filter:blur(20px);border:1px solid var(--card-border);padding:22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}
+  .code-snippet{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:#b3bce8;background:rgba(0,0,0,.35);padding:14px;border-radius:12px;border:1px solid var(--card-border);overflow:hidden}
+  .code-snippet .k{color:#ff6ad5}.code-snippet .s{color:#22d3ee}.code-snippet .c{color:#6f7aa8}
+  .hero-icons{display:flex;gap:14px;justify-content:space-around;flex-wrap:wrap}
+  .hero-icons i{font-size:1.8rem}
+  .floating-tag{position:absolute;padding:8px 14px;border-radius:999px;background:rgba(13,17,48,.85);border:1px solid var(--card-border);font-size:.78rem;font-weight:600;backdrop-filter:blur(10px);box-shadow:0 10px 30px rgba(0,0,0,.4);animation:float 5s ease-in-out infinite;white-space:nowrap}
+  .ft-1{top:5%;right:-2%;color:#22d3ee}
+  .ft-2{bottom:8%;left:-4%;color:#ff6ad5;animation-delay:1s}
+  .ft-3{top:42%;right:-6%;color:#7c5cff;animation-delay:2s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+  section{padding:80px 0}
+  .sec-head{text-align:center;max-width:740px;margin:0 auto 50px;padding:0 10px}
+  .eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:#22d3ee;font-weight:700;margin-bottom:12px}
+  h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:14px}
+  h2 .grad{background:var(--grad);-webkit-background-clip:text;color:transparent}
+  .sec-head p{color:var(--muted);font-size:1rem}
+
+  /* AI vs ML two card */
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .compare-card{position:relative;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:32px;overflow:hidden;transition:.3s}
+  .compare-card:hover{transform:translateY(-4px);border-color:rgba(124,92,255,.4)}
+  .compare-card .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--grad);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.05em;margin-bottom:16px}
+  .compare-card h3{font-size:1.4rem;font-weight:800;margin-bottom:12px}
+  .compare-card p{color:var(--muted);margin-bottom:14px;font-size:.95rem}
+  .compare-card ul{list-style:none;display:grid;gap:9px}
+  .compare-card li{display:flex;gap:10px;color:#cdd5ff;font-size:.92rem}
+  .compare-card li i{color:#22d3ee;margin-top:5px;font-size:.65rem}
+  .compare-card .num-bg{position:absolute;right:-20px;top:-30px;font-size:9rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;color:transparent;opacity:.08}
+
+  /* WHY/WHAT */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .info-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:32px;position:relative;overflow:hidden}
+  .info-card .num-bg{position:absolute;right:-20px;top:-30px;font-size:9rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;color:transparent;opacity:.08}
+  .info-card h3{font-size:1.3rem;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+  .info-card h3 i{color:#22d3ee}
+  .info-card p{color:var(--muted);margin-bottom:14px;font-size:.95rem}
+  .info-card ul{list-style:none;display:grid;gap:10px}
+  .info-card li{display:flex;gap:10px;color:#cdd5ff;font-size:.93rem}
+  .info-card li i{color:#22d3ee;margin-top:5px;font-size:.65rem}
+
+  /* TOPICS */
+  .topics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+  .topic-card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:24px;transition:.3s;position:relative;overflow:hidden}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+  .topic-card:hover{transform:translateY(-6px);border-color:rgba(124,92,255,.4);background:rgba(255,255,255,.06)}
+  .topic-card:hover::before{transform:scaleX(1)}
+  .topic-icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:var(--grad-soft);border:1px solid var(--card-border);font-size:1.5rem;margin-bottom:16px}
+  .topic-card h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+  .topic-card p{color:var(--muted);font-size:.9rem}
+
+  /* CAREER */
+  .career-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .career-card{padding:22px;background:var(--card);border:1px solid var(--card-border);border-radius:14px;transition:.3s}
+  .career-card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.4)}
+  .career-card .role{font-weight:700;font-size:1.02rem;margin-bottom:6px}
+  .career-card .salary{background:var(--grad);-webkit-background-clip:text;color:transparent;font-weight:800;font-size:1.25rem;margin:8px 0}
+  .career-card .note{color:var(--muted);font-size:.83rem}
+
+  /* TECH STACK with real icons */
+  .tech-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:36px}
+  .tech-tab{padding:10px 18px;border-radius:999px;background:var(--card);border:1px solid var(--card-border);cursor:pointer;font-weight:600;font-size:.88rem;color:var(--muted);transition:.25s;font-family:inherit}
+  .tech-tab.active{background:var(--grad);color:#fff;border-color:transparent;box-shadow:var(--shadow)}
+  .tech-panel{display:none;animation:fade .35s}
+  .tech-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+  .skill-card{display:flex;flex-direction:column;align-items:center;gap:10px;padding:22px 14px;background:var(--card);border:1px solid var(--card-border);border-radius:14px;transition:.25s;text-align:center}
+  .skill-card:hover{transform:translateY(-5px);border-color:rgba(124,92,255,.4);background:rgba(255,255,255,.06)}
+  .skill-card .ico{width:52px;height:52px;display:grid;place-items:center;font-size:2.4rem}
+  .skill-card .ico img{width:48px;height:48px;object-fit:contain}
+  .skill-card span{font-weight:600;font-size:.85rem;color:#dde3ff}
+  .skill-card .sub{color:var(--muted);font-size:.72rem;font-weight:500}
+
+  /* ROADMAP */
+  .roadmap{position:relative;max-width:900px;margin:0 auto;padding-left:30px}
+  .roadmap::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:var(--grad)}
+  .road-item{position:relative;padding:22px 26px;margin-bottom:22px;background:var(--card);border:1px solid var(--card-border);border-radius:14px}
+  .road-item::before{content:'';position:absolute;left:-22px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--grad);box-shadow:0 0 0 4px var(--bg), 0 0 16px rgba(124,92,255,.6)}
+  .road-item .month{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--grad-soft);padding:5px 12px;border-radius:999px;color:#22d3ee;margin-bottom:10px}
+  .road-item h4{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+  .road-item p{color:var(--muted);font-size:.91rem}
+
+  /* TRAINER */
+  .trainer-card{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:center;background:var(--card);border:1px solid var(--card-border);border-radius:24px;padding:36px;position:relative;overflow:hidden}
+  .trainer-card::before{content:'';position:absolute;inset:0;background:var(--grad-soft);opacity:.5;z-index:0}
+  .trainer-content{position:relative;z-index:1}
+  .trainer-photo{position:relative;z-index:1;aspect-ratio:1/1;border-radius:20px;background:var(--grad);display:grid;place-items:center;font-size:5rem;color:#fff;font-weight:800;box-shadow:var(--shadow)}
+  .trainer-content h3{font-size:1.7rem;font-weight:800;margin-bottom:6px}
+  .trainer-content .title{color:#22d3ee;font-weight:600;margin-bottom:14px}
+  .trainer-content p{color:var(--muted);margin-bottom:18px;font-size:.95rem}
+  .trainer-stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:20px}
+  .trainer-stats div b{display:block;font-size:1.3rem;background:var(--grad);-webkit-background-clip:text;color:transparent}
+  .trainer-stats div span{color:var(--muted);font-size:.83rem}
+  .socials{display:flex;gap:12px;flex-wrap:wrap}
+  .socials a{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--card-border);display:grid;place-items:center;color:var(--text);font-size:1.05rem;transition:.25s}
+  .socials a:hover{background:var(--grad);border-color:transparent;transform:translateY(-3px)}
+
+  /* QUERY */
+  .query-wrap{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--card-border);border-radius:24px;padding:40px;position:relative;overflow:hidden}
+  .query-wrap::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:var(--grad);filter:blur(80px);opacity:.25}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative;z-index:1}
+  .form-grid .full{grid-column:1/-1}
+  .field label{display:block;font-size:.86rem;font-weight:600;margin-bottom:8px;color:#cdd5ff}
+  .field input,.field select,.field textarea{width:100%;padding:13px 16px;background:rgba(0,0,0,.25);border:1px solid var(--card-border);border-radius:12px;color:var(--text);font-family:inherit;font-size:.94rem;outline:none;transition:.2s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(124,92,255,.18)}
+  .field textarea{resize:vertical;min-height:110px}
+  .form-submit{display:flex;justify-content:center;margin-top:8px}
+
+  /* FOOTER */
+  footer{padding:60px 0 30px;border-top:1px solid var(--card-border);margin-top:60px;background:rgba(0,0,0,.25)}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+  .footer-grid h5{font-weight:700;margin-bottom:16px;font-size:1rem}
+  .footer-grid ul{list-style:none;display:grid;gap:10px}
+  .footer-grid a{color:var(--muted);font-size:.9rem;transition:.2s}
+  .footer-grid a:hover{color:var(--text)}
+  .foot-about p{color:var(--muted);font-size:.9rem;margin:14px 0 18px}
+  .copy{text-align:center;color:var(--muted);font-size:.86rem;padding-top:22px;border-top:1px solid var(--card-border)}
+
+  /* Float WA */
+  .wa-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;color:#fff;font-size:1.6rem;box-shadow:0 12px 30px rgba(37,211,102,.5);z-index:60;transition:.25s}
+  .wa-float:hover{transform:scale(1.1)}
+
+  /* RESPONSIVE */
+  @media (max-width: 960px){
+    .hero-grid,.two-col,.compare-grid,.trainer-card{grid-template-columns:1fr}
+    .trainer-photo{max-width:240px;margin:0 auto}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .nav-links{position:absolute;top:100%;left:0;right:0;background:rgba(7,9,26,.96);backdrop-filter:blur(20px);flex-direction:column;align-items:flex-start;padding:20px 22px;gap:18px;border-bottom:1px solid var(--card-border);transform:translateY(-10px);opacity:0;pointer-events:none;transition:.25s}
+    .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+    .nav-links .btn-primary{width:100%;justify-content:center}
+    .menu-toggle{display:block}
+  }
+  @media (max-width: 600px){
+    section{padding:60px 0}
+    .form-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr}
+    .query-wrap,.trainer-card,.compare-card,.info-card{padding:24px}
+    .hero{padding:50px 0 30px}
+    .hero-stats{gap:18px}
+    .skill-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+    .skill-card{padding:18px 10px}
+    .skill-card .ico{font-size:2rem}
+    .skill-card .ico img{width:40px;height:40px}
+    .wa-float{width:50px;height:50px;font-size:1.4rem;bottom:18px;right:18px}
+  }
+  @media (max-width: 380px){
+    .skill-grid{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <a href="#" class="logo">
+      <span class="logo-mark">RS</span>
+      <span>Ram Sir <span style="color:var(--muted);font-weight:500">| AI / ML</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#aivsml">AI vs ML</a>
+      <a href="#topics">Topics</a>
+      <a href="#tech">Tech Stack</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#trainer">Trainer</a>
+      <a href="#query" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Enroll</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="badge"><span class="dot"></span> Job-Ready Program • 2026 Batch</span>
+        <h1>Become a <span class="grad">Master AI &amp; ML Engineer</span> with Ram Sir</h1>
+        <p class="lead">From Python fundamentals to Artificial Intelligence, Machine Learning, Deep Learning, NLP and LLMs — a complete mentor-led roadmap with real projects, interview prep & placement support.</p>
+        <div class="hero-cta">
+          <a href="#query" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> Start Your Journey</a>
+          <a href="#roadmap" class="btn btn-ghost"><i class="fa-solid fa-map"></i> View Roadmap</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="num">8+</div><div class="lbl">Months Program</div></div>
+          <div class="stat"><div class="num">15+</div><div class="lbl">Real Projects</div></div>
+          <div class="stat"><div class="num">100%</div><div class="lbl">Placement Support</div></div>
+          <div class="stat"><div class="num">₹5-25L</div><div class="lbl">Avg. Salary</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orb"></div>
+        <div class="hero-card">
+          <div>
+            <div style="display:flex;gap:6px;margin-bottom:14px">
+              <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:#febc2e"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:#28c840"></span>
+            </div>
+            <div class="code-snippet">
+<span class="c"># Train your future</span><br>
+<span class="k">from</span> ram_sir <span class="k">import</span> Mentor<br>
+<span class="k">import</span> ai, ml, dl, nlp, llms<br><br>
+career = Mentor(<span class="s">"AI/ML"</span>).train(<br>
+&nbsp;&nbsp;you=<span class="s">"passionate"</span>,<br>
+&nbsp;&nbsp;goal=<span class="s">"job_ready"</span><br>
+)
+            </div>
+          </div>
+          <div class="hero-icons">
+            <i class="devicon-python-plain colored" title="Python"></i>
+            <i class="devicon-tensorflow-original colored" title="TensorFlow"></i>
+            <i class="devicon-pytorch-original colored" title="PyTorch"></i>
+            <i class="devicon-pandas-original colored" title="Pandas"></i>
+            <i class="devicon-mysql-original colored" title="SQL"></i>
+          </div>
+        </div>
+        <div class="floating-tag ft-1"><i class="fa-solid fa-circle-check"></i> 95% Placement</div>
+        <div class="floating-tag ft-2"><i class="fa-solid fa-star"></i> 4.9/5 Rating</div>
+        <div class="floating-tag ft-3"><i class="fa-solid fa-users"></i> 1000+ Students</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY / WHAT -->
+<section id="about">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">About the Career</span>
+      <h2>Why &amp; What is an <span class="grad">AI / ML Engineer</span>?</h2>
+      <p>Understand the role, the impact, and why this is one of the most in-demand careers of the decade.</p>
+    </div>
+    <div class="two-col">
+      <div class="info-card">
+        <span class="num-bg">01</span>
+        <h3><i class="fa-solid fa-lightbulb"></i> What is an AI / ML Engineer?</h3>
+        <p>An AI/ML Engineer designs, builds, and deploys intelligent systems that learn from data — from recommendation engines and chatbots to self-driving perception and large language models.</p>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i> Builds & trains AI / ML / DL / LLM models</li>
+          <li><i class="fa-solid fa-circle"></i> Works with large datasets & data pipelines</li>
+          <li><i class="fa-solid fa-circle"></i> Deploys models to production (MLOps)</li>
+          <li><i class="fa-solid fa-circle"></i> Solves real-world business problems with AI</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <span class="num-bg">02</span>
+        <h3><i class="fa-solid fa-rocket"></i> Why choose AI / ML as a career?</h3>
+        <p>AI is reshaping every industry. Engineers with AI/ML skills are the highest paid, most respected, and the most future-proof in tech.</p>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i> 🚀 Highest paying tech role globally</li>
+          <li><i class="fa-solid fa-circle"></i> 🌍 Demand across every industry</li>
+          <li><i class="fa-solid fa-circle"></i> 🧠 Build products that change the world</li>
+          <li><i class="fa-solid fa-circle"></i> 💼 Remote, freelance & global opportunities</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI vs ML PART -->
+<section id="aivsml" style="background:linear-gradient(180deg, transparent, rgba(124,92,255,.05), transparent)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Understand the Difference</span>
+      <h2>The <span class="grad">AI</span> Side &amp; The <span class="grad">ML</span> Side</h2>
+      <p>You'll master both — Artificial Intelligence (the brain) and Machine Learning (the engine that makes it learn).</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <span class="num-bg">AI</span>
+        <span class="tag"><i class="fa-solid fa-robot"></i> Artificial Intelligence</span>
+        <h3>The Brain — AI Part</h3>
+        <p>AI is the broader science of making machines think, reason, perceive and act like humans. You'll learn to build intelligent agents, chatbots and Generative AI products.</p>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i> Generative AI &amp; LLMs (ChatGPT, Gemini, Claude)</li>
+          <li><i class="fa-solid fa-circle"></i> Prompt Engineering &amp; AI Agents</li>
+          <li><i class="fa-solid fa-circle"></i> LangChain, RAG &amp; Vector Databases</li>
+          <li><i class="fa-solid fa-circle"></i> Computer Vision &amp; Speech AI</li>
+          <li><i class="fa-solid fa-circle"></i> Natural Language Processing (NLP)</li>
+          <li><i class="fa-solid fa-circle"></i> AI Ethics, Bias &amp; Responsible AI</li>
+          <li><i class="fa-solid fa-circle"></i> Build real AI Products (Chatbots, Copilots)</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <span class="num-bg">ML</span>
+        <span class="tag"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+        <h3>The Engine — ML Part</h3>
+        <p>ML is the core of AI — it teaches machines to learn from data and make predictions. You'll master algorithms, models and deployment workflows.</p>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i> Supervised &amp; Unsupervised Learning</li>
+          <li><i class="fa-solid fa-circle"></i> Regression, Classification, Clustering</li>
+          <li><i class="fa-solid fa-circle"></i> Ensemble Models — RF, XGBoost, LightGBM</li>
+          <li><i class="fa-solid fa-circle"></i> Deep Learning — CNN, RNN, LSTM, Transformers</li>
+          <li><i class="fa-solid fa-circle"></i> Feature Engineering &amp; Model Tuning</li>
+          <li><i class="fa-solid fa-circle"></i> Model Evaluation &amp; Cross Validation</li>
+          <li><i class="fa-solid fa-circle"></i> MLOps — Deploy ML to production</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section id="topics">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Course Modules</span>
+      <h2>What You'll <span class="grad">Master</span></h2>
+      <p>A complete curriculum covering everything you need to become a job-ready AI/ML Engineer.</p>
+    </div>
+    <div class="topics-grid">
+      <div class="topic-card"><div class="topic-icon"><i class="devicon-python-plain colored"></i></div><h3>Python Programming</h3><p>Core Python, OOP, file handling and best practices for data engineering.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="fa-solid fa-square-root-variable" style="color:#7c5cff"></i></div><h3>Mathematics for ML</h3><p>Linear algebra, calculus, probability & statistics — the foundation of ML.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="devicon-mysql-original colored"></i></div><h3>SQL &amp; Databases</h3><p>MySQL, PostgreSQL, joins, window functions & data extraction.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="devicon-pandas-original colored"></i></div><h3>Data Analysis</h3><p>NumPy, Pandas, Matplotlib, Seaborn for EDA & visualization.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="fa-solid fa-file-excel" style="color:#22c55e"></i></div><h3>Excel &amp; Power BI</h3><p>Business analysis, dashboards, DAX & storytelling with data.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="devicon-scikitlearn-plain colored"></i></div><h3>Machine Learning</h3><p>Supervised, unsupervised, ensemble methods, tuning & deployment.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="devicon-tensorflow-original colored"></i></div><h3>Deep Learning</h3><p>Neural networks, CNNs, RNNs, Transformers using TF & PyTorch.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="fa-solid fa-comments" style="color:#22d3ee"></i></div><h3>NLP</h3><p>Text processing, embeddings, BERT, sentiment analysis & chatbots.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="fa-solid fa-microchip" style="color:#ff6ad5"></i></div><h3>LLMs &amp; Gen AI</h3><p>OpenAI, LangChain, RAG, fine-tuning, vector DBs & AI agents.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="devicon-docker-plain colored"></i></div><h3>MLOps &amp; Deployment</h3><p>Docker, FastAPI, AWS/GCP, CI/CD and model monitoring.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="fa-solid fa-diagram-project" style="color:#7c5cff"></i></div><h3>End-to-End Projects</h3><p>15+ real-world capstone projects for your portfolio.</p></div>
+      <div class="topic-card"><div class="topic-icon"><i class="fa-solid fa-briefcase" style="color:#22d3ee"></i></div><h3>Interview Prep</h3><p>Mock interviews, DSA basics, system design & resume building.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career" style="background:linear-gradient(180deg, transparent, rgba(34,211,238,.04), transparent)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Job Roles &amp; Salary</span>
+      <h2>Your <span class="grad">Career Opportunities</span></h2>
+      <p>AI/ML opens doors across industries — finance, healthcare, e-commerce, automotive, gaming, and more.</p>
+    </div>
+    <div class="career-grid">
+      <div class="career-card"><div class="role">🤖 ML Engineer</div><div class="salary">₹8 – 22 LPA</div><div class="note">Build & deploy production ML systems</div></div>
+      <div class="career-card"><div class="role">📊 Data Scientist</div><div class="salary">₹6 – 25 LPA</div><div class="note">Insights, modeling & business analytics</div></div>
+      <div class="career-card"><div class="role">🧠 Deep Learning Engineer</div><div class="salary">₹10 – 30 LPA</div><div class="note">CV, NLP, neural network specialist</div></div>
+      <div class="career-card"><div class="role">💬 NLP Engineer</div><div class="salary">₹9 – 24 LPA</div><div class="note">Chatbots, search, language understanding</div></div>
+      <div class="career-card"><div class="role">⚙️ MLOps Engineer</div><div class="salary">₹10 – 28 LPA</div><div class="note">Pipelines, monitoring, scaling models</div></div>
+      <div class="career-card"><div class="role">🚀 Gen AI / LLM Engineer</div><div class="salary">₹15 – 40 LPA</div><div class="note">RAG, agents, fine-tuning LLMs</div></div>
+      <div class="career-card"><div class="role">📈 Data Analyst</div><div class="salary">₹4 – 12 LPA</div><div class="note">SQL, Power BI, dashboards & reports</div></div>
+      <div class="career-card"><div class="role">🔬 AI Researcher</div><div class="salary">₹12 – 50 LPA</div><div class="note">Cutting-edge R&D in AI labs</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="tech">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Complete Tech Stack</span>
+      <h2>Tools You'll <span class="grad">Build &amp; Ship With</span></h2>
+      <p>Industry-grade languages, libraries and frameworks used by top AI companies worldwide.</p>
+    </div>
+    <div class="tech-tabs">
+      <button class="tech-tab active" data-tab="lang">Languages &amp; Foundations</button>
+      <button class="tech-tab" data-tab="lib">Python Libraries</button>
+      <button class="tech-tab" data-tab="ml">ML &amp; Deep Learning</button>
+      <button class="tech-tab" data-tab="genai">AI / NLP / LLMs</button>
+      <button class="tech-tab" data-tab="data">Data &amp; BI</button>
+      <button class="tech-tab" data-tab="deploy">Deployment / MLOps</button>
+    </div>
+
+    <div class="tech-panel active" data-panel="lang">
+      <div class="skill-grid">
+        <div class="skill-card"><div class="ico"><i class="devicon-python-plain colored"></i></div><span>Python</span><span class="sub">Core Language</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-mysql-original colored"></i></div><span>MySQL</span><span class="sub">Database</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-postgresql-plain colored"></i></div><span>PostgreSQL</span><span class="sub">Database</span></div>
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-square-root-variable" style="color:#7c5cff"></i></div><span>Math &amp; Stats</span><span class="sub">Foundation</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-git-plain colored"></i></div><span>Git</span><span class="sub">Version Control</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-github-original" style="color:#fff"></i></div><span>GitHub</span><span class="sub">Collaboration</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-linux-plain" style="color:#fff"></i></div><span>Linux</span><span class="sub">Shell &amp; Bash</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-jupyter-plain colored"></i></div><span>Vs Code</span><span class="sub">VS-CODE</span></div>
+      </div>
+    </div>
+
+    <div class="tech-panel" data-panel="lib">
+      <div class="skill-grid">
+        <div class="skill-card"><div class="ico"><i class="devicon-numpy-original colored"></i></div><span>NumPy</span><span class="sub">Arrays &amp; Math</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-pandas-original colored"></i></div><span>Pandas</span><span class="sub">DataFrames</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-matplotlib-plain colored"></i></div><span>Matplotlib</span><span class="sub">Plotting</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="Seaborn"/></div><span>Seaborn</span><span class="sub">Stat Charts</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://images.plot.ly/logo/new-branding/plotly-logomark.png" alt="Plotly"/></div><span>Plotly</span><span class="sub">Interactive</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-opencv-plain colored"></i></div><span>OpenCV</span><span class="sub">Computer Vision</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-selenium-original colored"></i></div><span>Selenium</span><span class="sub">Web Scraping</span></div>
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-spider" style="color:#22d3ee"></i></div><span>BeautifulSoup</span><span class="sub">HTML Parsing</span></div>
+      </div>
+    </div>
+
+    <div class="tech-panel" data-panel="ml">
+      <div class="skill-grid">
+        <div class="skill-card"><div class="ico"><i class="devicon-scikitlearn-plain colored"></i></div><span>Scikit-Learn</span><span class="sub">Classic ML</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://upload.wikimedia.org/wikipedia/commons/6/69/XGBoost_logo.png" alt="XGBoost"/></div><span>XGBoost</span><span class="sub">Boosting</span></div>
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-tree" style="color:#22c55e"></i></div><span>LightGBM</span><span class="sub">Boosting</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-tensorflow-original colored"></i></div><span>TensorFlow</span><span class="sub">Deep Learning</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-pytorch-original colored"></i></div><span>PyTorch</span><span class="sub">Deep Learning</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-keras-plain colored"></i></div><span>Keras</span><span class="sub">High-level NN</span></div>
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-eye" style="color:#7c5cff"></i></div><span>Computer Vision</span><span class="sub">Image AI</span></div>
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-shuffle" style="color:#ff6ad5"></i></div><span>Transformers</span><span class="sub">Modern DL</span></div>
+      </div>
+    </div>
+
+    <div class="tech-panel" data-panel="genai">
+      <div class="skill-grid">
+        <div class="skill-card"><div class="ico">🤗</div><span>HuggingFace</span><span class="sub">Models Hub</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="OpenAI"/></div><span>OpenAI API</span><span class="sub">GPT &amp; LLMs</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://avatars.githubusercontent.com/u/126733545" alt="LangChain"/></div><span>LangChain</span><span class="sub">LLM Framework</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://avatars.githubusercontent.com/u/121462774" alt="LlamaIndex"/></div><span>LlamaIndex</span><span class="sub">RAG</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://avatars.githubusercontent.com/u/54333248" alt="Pinecone"/></div><span>Pinecone</span><span class="sub">Vector DB</span></div>
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-database" style="color:#22d3ee"></i></div><span>FAISS / Chroma</span><span class="sub">Vector Search</span></div>
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-comments" style="color:#22d3ee"></i></div><span>spaCy / NLTK</span><span class="sub">NLP</span></div>
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-people-group" style="color:#ff6ad5"></i></div><span>AI Agents</span><span class="sub">Autonomous AI</span></div>
+      </div>
+    </div>
+
+    <div class="tech-panel" data-panel="data">
+      <div class="skill-grid">
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-file-excel" style="color:#22c55e"></i></div><span>Excel</span><span class="sub">Advanced</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI"/></div><span>Power BI</span><span class="sub">Dashboards</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau"/></div><span>Tableau</span><span class="sub">Viz</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-mysql-original colored"></i></div><span>MySQL</span><span class="sub">RDBMS</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-postgresql-plain colored"></i></div><span>PostgreSQL</span><span class="sub">RDBMS</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-mongodb-plain colored"></i></div><span>MongoDB</span><span class="sub">NoSQL</span></div>
+        <div class="skill-card"><div class="ico"><i class="fa-solid fa-chart-line" style="color:#22d3ee"></i></div><span>Statistics</span><span class="sub">Analytics</span></div>
+      </div>
+    </div>
+
+    <div class="tech-panel" data-panel="deploy">
+      <div class="skill-grid">
+        <div class="skill-card"><div class="ico"><i class="devicon-docker-plain colored"></i></div><span>Docker</span><span class="sub">Containers</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-fastapi-plain colored"></i></div><span>FastAPI</span><span class="sub">ML APIs</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-flask-original" style="color:#fff"></i></div><span>Flask</span><span class="sub">Backend</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div><span>AWS</span><span class="sub">Cloud</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-googlecloud-plain colored"></i></div><span>GCP</span><span class="sub">Cloud</span></div>
+        <div class="skill-card"><div class="ico"><i class="devicon-azure-plain colored"></i></div><span>Azure</span><span class="sub">Cloud</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://mlflow.org/docs/latest/_static/MLflow-logo-final-black.png" alt="MLflow" style="background:#fff;border-radius:6px;padding:4px"/></div><span>MLflow</span><span class="sub">Experiments</span></div>
+        <div class="skill-card"><div class="ico"><img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="Streamlit"/></div><span>Streamlit</span><span class="sub">ML Apps</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" style="background:linear-gradient(180deg, transparent, rgba(255,106,213,.04), transparent)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">6-Month Roadmap</span>
+      <h2>Your Path to <span class="grad">Job Ready</span></h2>
+      <p>Step-by-step curriculum designed to take you from beginner to AI/ML professional.</p>
+    </div>
+    <div class="roadmap">
+      <div class="road-item"><span class="month">Month 1</span><h4>Python + Math + SQL Foundations</h4><p>Python core & OOP, NumPy, Pandas basics, statistics, probability, linear algebra essentials, and SQL queries.</p></div>
+      <div class="road-item"><span class="month">Month 2</span><h4>Data Analysis, EDA &amp; Visualization</h4><p>Advanced Pandas, Matplotlib, Seaborn, Plotly, Excel & Power BI dashboards. Build 2 analytics projects.</p></div>
+      <div class="road-item"><span class="month">Month 3</span><h4>Machine Learning</h4><p>Regression, classification, clustering, ensemble (RF, XGBoost), feature engineering & model tuning.</p></div>
+      <div class="road-item"><span class="month">Month 4</span><h4>Deep Learning + Computer Vision</h4><p>Neural networks, CNNs, transfer learning with TensorFlow & PyTorch. Image classification & detection projects.</p></div>
+      <div class="road-item"><span class="month">Month 5</span><h4>AI: NLP + LLMs + Generative AI</h4><p>Transformers, BERT, OpenAI API, LangChain, RAG, vector DBs & build AI chatbots and agents.</p></div>
+      <div class="road-item"><span class="month">Month 6</span><h4>MLOps + Capstone + Interview Prep</h4><p>Docker, FastAPI, AWS deployment, end-to-end capstone, mock interviews, resume & LinkedIn portfolio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINER -->
+<section id="trainer">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Meet Your Mentor</span>
+      <h2>Learn From <span class="grad">Industry Expert</span></h2>
+    </div>
+    <div class="trainer-card">
+      <div class="trainer-photo">RS</div>
+      <div class="trainer-content">
+        <h3>Ram Sir</h3>
+        <div class="title">Senior Technical Trainer &amp; AI/ML Mentor</div>
+        <p>2+ years of experience in AI, Machine Learning and Data Science. Trained 500+ students who are now working at top product companies. Passionate about making AI simple, practical & job-ready.</p>
+        <div class="trainer-stats">
+          <div><b>2+ yrs</b><span>Industry Experience</span></div>
+          <div><b>500+</b><span>Students Trained</span></div>
+          <div><b>10+</b><span>Industry Projects</span></div>
+          <div><b>4.9/5</b><span>Student Rating</span></div>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/ramgopal-prajapati-b30237264/"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@ramsirdevix"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/iamramsir"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/919753528324"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.github.com/Ramgopal-prajapati" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUERY -->
+<section id="query" style="background:linear-gradient(180deg, transparent, rgba(255,106,213,.04), transparent)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Get Started</span>
+      <h2>Send Your <span class="grad">Query</span></h2>
+      <p>Fill the form & we'll instantly receive your details on WhatsApp. Ram Sir will personally connect with you.</p>
+    </div>
+    <div class="query-wrap">
+      <form id="queryForm" class="form-grid">
+        <div class="field"><label>Your Name *</label><input type="text" name="name" required placeholder="Enter your full name"/></div>
+        <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required placeholder="+91 98765 43210"/></div>
+        <div class="field"><label>Email</label><input type="email" name="email" placeholder="you@example.com"/></div>
+        <div class="field"><label>Current Status</label>
+          <select name="status">
+            <option>Student</option><option>Working Professional</option><option>Fresher</option><option>Career Switcher</option>
+          </select>
+        </div>
+        <div class="field full"><label>Your Query / Goal</label><textarea name="message" placeholder="Tell us about your background and what you'd like to achieve…"></textarea></div>
+        <div class="full form-submit"><button type="submit" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="foot-about">
+        <div class="logo"><span class="logo-mark">R</span><span>Ram Sir | AI / ML</span></div>
+        <p>Master AI &amp; ML Engineering with India's most loved mentor. Job-ready training, real projects & 100% placement support.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/ramgopal-prajapati-b30237264/"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@ramsirdevix"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.instagram.com/iamramsir"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/919753528324"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div><h5>Quick Links</h5><ul>
+        <li><a href="#about">About</a></li><li><a href="#aivsml">AI vs ML</a></li>
+        <li><a href="#topics">Topics</a></li><li><a href="#tech">Tech Stack</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+      </ul></div>
+      <div><h5>Programs</h5><ul>
+        <li><a href="#">Python for AI</a></li><li><a href="#">ML Mastery</a></li>
+        <li><a href="#">Deep Learning</a></li><li><a href="#">LLMs &amp; Gen AI</a></li>
+      </ul></div>
+      <div><h5>Contact</h5><ul>
+        <li><a href="https://wa.me/919753528324"><i class="fa-brands fa-whatsapp"></i> +91 9753528324</a></li>
+        <li><a href="mailto:ramsirdevix@gmail.com"><i class="fa-solid fa-envelope"></i> ramsirdevix@gmail.com</a></li>
+        <li><a href="#"><i class="fa-solid fa-location-dot"></i>Indore , India (Online/ Offline )</a></li>
+      </ul></div>
+    </div>
+    <div class="copy">© 2026 Ram Sir AI/ML . Crafted with ❤️ for future AI Engineers.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919753528324" class="wa-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+  const toggle=document.getElementById('menuToggle');
+  const links=document.getElementById('navLinks');
+  toggle.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+  document.querySelectorAll('.tech-tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      document.querySelectorAll('.tech-tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.tech-panel').forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector(`.tech-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+    });
+  });
+
+  document.getElementById('queryForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const f=e.target;
+    const d={name:f.name.value.trim(),phone:f.phone.value.trim(),email:f.email.value.trim(),status:f.status.value,message:f.message.value.trim()};
+    if(!d.name||!d.phone){alert('Please fill name & phone');return;}
+    const text=`🎓 *New Query — Master AI/ML Engineer*%0A%0A`+
+      `👤 *Name:* ${encodeURIComponent(d.name)}%0A`+
+      `📞 *Phone:* ${encodeURIComponent(d.phone)}%0A`+
+      `📧 *Email:* ${encodeURIComponent(d.email||'-')}%0A`+
+      `💼 *Status:* ${encodeURIComponent(d.status)}%0A`+
+      `💬 *Query:* ${encodeURIComponent(d.message||'-')}`;
+    window.open(`https://wa.me/919753528324?text=${text}`,'_blank');
+  });
+</script>
+</body>
+</html>
